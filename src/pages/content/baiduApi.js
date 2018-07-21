@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import Qs from 'qs';
 import {
-  View, ScrollView, Text, StyleSheet, InteractionManager,
+  View, ScrollView, Text, StyleSheet, InteractionManager, Platform, Alert
 } from 'react-native';
 import { gaxios } from '../../utils/axios';
 
@@ -38,8 +38,28 @@ export default class BaiduApi extends Component {
       (initialPosition) => this.setState({ initialPosition }, () => {
         this._getAddress();
       }),
-      (error) => alert(error.message),
-      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
+      (error) => {
+        if (Platform.OS === 'ios') {
+          if (error && error.code === 1) {
+            Alert.alert('请允许该应用访问位置服务', '', [{ text: '好' }]);
+          } else if (error && error.code === 2) {
+            Alert.alert('位置信息GPS服务不可用', '', [{ text: '好' }]);
+          } else if (error && error.code === 3) {
+            Alert.alert('获取GPS信息超时，请重新打开该页面获取信息', '', [{ text: '好' }]);
+          } else {
+            Alert.alert('未知错误', '', [{ text: '好' }]);
+          }
+        } else if (Platform.OS === 'android') {
+          // ANDROID:message: "No location provider available.", code: 2
+          // ANDROID:message: "Geolocation timed out.", code: 3
+          if (error && error.code === 2) {
+            Alert.alert('请打开位置信息服务', '', [{ text: '好' }]);
+          } else if (error && error.code === 3) {
+            Alert.alert('获取GPS信息超时，请打开高精度GPS定位服务功能', '', [{ text: '好' }]);
+          }
+        }
+      },
+      { enableHighAccuracy: false, timeout: 20000, maximumAge: 10000 }
     );
   };
 
@@ -49,7 +69,7 @@ export default class BaiduApi extends Component {
         this.setState({ lastPosition }, () => { this._getAddress(); });
       },
       (error) => alert(error.message),
-      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
+      { enableHighAccuracy: false, timeout: 20000, maximumAge: 10000 }
     );
   };
 
