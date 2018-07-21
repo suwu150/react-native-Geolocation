@@ -15,6 +15,7 @@ const AppNavigator = createStackNavigator(stackConfig, stackNavigatorConfig);// 
 class RouterManager extends Component {
   constructor(props) {
     super(props);
+    this.lastBackPressed = 0;
     this.state = {};
   }
 
@@ -36,6 +37,7 @@ class RouterManager extends Component {
       return true;
     } else { // eslint-disable-line
       if (this.lastBackPressed && this.lastBackPressed + 2000 >= Date.now()) {
+        BackHandler.exitApp();
         return false;
       }
 

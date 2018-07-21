@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import Qs from 'qs';
 import {
-  View, ScrollView, Text, StyleSheet, InteractionManager, Platform, Alert
+  View, ScrollView, Text, StyleSheet, InteractionManager, Platform, Alert, DeviceEventEmitter
 } from 'react-native';
 import { gaxios } from '../../utils/axios';
 
@@ -27,6 +27,10 @@ export default class BaiduApi extends Component {
   componentDidMount() {
     this._getLocation();
     this.watchPosition = this._getWatchPosition();
+    //收到监听,另外一种接受监听的方法
+    this.listener = DeviceEventEmitter.addListener('geolocationDidChange', (e) => {
+      console.log(e);
+    });
   }
 
   componentWillUnmount() {
