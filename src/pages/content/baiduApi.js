@@ -87,6 +87,7 @@ export default class BaiduApi extends Component {
       // callback: 'renderReverse',
       ak: '3nHjylGdT3z5jSldf2o2E1qyF85YDLZ4',
       pois: 1,
+      coordtype: 'wgs84ll', // 可能会影响精度
       output: 'json',
       latest_admin: 1,
       language_auto: 1,
