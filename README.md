@@ -15,12 +15,15 @@ GitHub地址：[https://github.com/suwu150/react-native-locations](https://githu
  ```shell
  git clone https://github.com/suwu150/react-native-locations.git
 ```
-2.进入项目，安装以来
+2.进入项目，安装依赖
+
 ```shell
 cd react-native-locations
 npm install
 ```
+
 3.运行项目
+
   ios#：
   ```js
  react-native run-ios
