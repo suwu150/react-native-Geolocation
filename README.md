@@ -4,9 +4,9 @@ react-native-Geolocation地理逆编码
 ##### 一、效果展示
 发送请求之后，我们能够看到如下效果，在请求之后，我将请求到的数据进行了分类，进行对其中具体的字段进行了说明：
 ###### 1.高德地图请求效果
-![高德效果展示](https://github.com/suwu150/static-resource/blob/master/images/react-native/react-native-locations/react-native-locations-amap.gif?raw=true)
+![高德效果展示](https://img-blog.csdn.net/20180817113951671?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N1d3UxNTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 ###### 2.百度地图请求效果
-![百度效果展示](https://github.com/suwu150/static-resource/blob/master/images/react-native/react-native-locations/react-native-locations-baidu.gif?raw=true)
+![百度效果展示](https://img-blog.csdn.net/20180817111620463?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N1d3UxNTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 ##### 二 演示代码github地址
 GitHub地址：[https://github.com/suwu150/react-native-locations](https://github.com/suwu150/react-native-locations)

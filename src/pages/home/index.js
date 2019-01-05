@@ -40,6 +40,7 @@ class Home extends React.Component { // eslint-disable-line
           )
         }
         {this._renderItem('', '高德', 'AMapApi')}
+        {this._renderItem('', '百度-桥接获取经纬度信息', 'BaiduSDKBri')}
         {/*{this._renderItem(*/}
           {/*'',*/}
           {/*'react-native-maps',*/}

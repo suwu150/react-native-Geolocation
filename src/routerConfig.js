@@ -1,11 +1,13 @@
 import Home from './pages/home';
 import BaiduApi from './pages/content/baiduApi';
 import AMapApi from './pages/content/aMapApi';
+import BaiduSDKBri from './pages/content/baiduSDK';
 
 const stackConfig = {
   Home: { screen: Home },
   BaiduApi: { screen: BaiduApi },
   AMapApi: { screen: AMapApi },
+  BaiduSDKBri: { screen: BaiduSDKBri },
 };
 
 const stackNavigatorConfig = {
